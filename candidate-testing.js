@@ -27,14 +27,14 @@ let candidateAnswers = [];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  candidateName = input.question("Hello! What name should be on your answers? ");
+  candidateName = input.question("Candidate Name: ");
 }
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   // candidateAnswer = input.question(question);
-  for (let i = 0; i < questions.length + 1; i++){
-    candidateAnswers[i] = input.question(questions[i]);
+  for (let i = 0; i < questions.length; i++){
+    candidateAnswers[i] = input.question(`${i + 1}) ${questions[i]}`);
   }
 }
 
@@ -68,7 +68,7 @@ function gradeQuiz(candidateAnswers) {
   } else {
     console.log(`>>> Status: FAILED <<<`);
   }
-  
+ 
 
   return grade;
 }
@@ -76,7 +76,6 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  console.log("Welcome, " + candidateName + "!");
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
