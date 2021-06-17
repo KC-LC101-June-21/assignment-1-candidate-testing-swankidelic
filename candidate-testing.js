@@ -57,7 +57,7 @@ function gradeQuiz(candidateAnswers) {
 
     //NOTE: I used the toLowerCase methods here to make the answers case-insensitive
     //without altering the original arrays -BWG
-    if (candidateAnswers[i] === correctAnswers[i]) {candidateScore++;}
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {candidateScore++;}
   }
 
   let grade = (candidateScore / questions.length) * 100;
